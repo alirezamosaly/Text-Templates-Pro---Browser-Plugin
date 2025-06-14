@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Templates Pro</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="logo">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <polyline points="14,2 14,8 20,8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <line x1="16" y1="13" x2="8" y2="13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <line x1="16" y1="17" x2="8" y2="17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <polyline points="10,9 9,9 8,9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <span>Templates Pro</span>
+            </div>
+            <div class="premium-badge" id="premiumBadge">Premium</div>
+        </header>
+
+        <div class="search-container">
+            <input type="text" id="searchInput" placeholder="Suche Vorlagen..." class="search-input">
+            <svg class="search-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="11" cy="11" r="8" stroke="currentColor" stroke-width="2"/>
+                <path d="m21 21-4.35-4.35" stroke="currentColor" stroke-width="2"/>
+            </svg>
+        </div>
+
+        <div class="categories">
+            <button class="category-btn active" data-category="all">Alle</button>
+            <button class="category-btn" data-category="email">Email</button>
+            <button class="category-btn" data-category="support">Support</button>
+            <button class="category-btn premium-only" data-category="dev">Dev</button>
+            <button class="category-btn premium-only" data-category="ai">KI Prompts</button>
+        </div>
+
+        <div class="templates-container" id="templatesContainer">
+            <!-- Templates werden hier dynamisch eingefügt -->
+        </div>
+
+        <div class="premium-upsell" id="premiumUpsell">
+            <div class="premium-content">
+                <div class="premium-header">
+                    <h3>Upgrade auf Premium</h3>
+                    <button class="close-upsell" id="closeUpsell">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <line x1="18" y1="6" x2="6" y2="18" stroke="currentColor" stroke-width="2"/>
+                            <line x1="6" y1="6" x2="18" y2="18" stroke="currentColor" stroke-width="2"/>
+                        </svg>
+                    </button>
+                </div>
+                <p>Erhalten Sie Zugriff auf alle Features:</p>
+                <ul>
+                    <li>Unbegrenzte Templates</li>
+                    <li>KI-Prompts & Code-Generierung</li>
+                    <li>Cloud-Synchronisation</li>
+                    <li>Export & Import</li>
+                    <li>Entwickler-Templates</li>
+                </ul>
+                <button class="btn btn-primary" id="upgradeBtn">Jetzt upgraden</button>
+            </div>
+        </div>
+
+        <div class="actions">
+            <button class="btn btn-secondary" id="addTemplateBtn">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <line x1="12" y1="5" x2="12" y2="19" stroke="currentColor" stroke-width="2"/>
+                    <line x1="5" y1="12" x2="19" y2="12" stroke="currentColor" stroke-width="2"/>
+                </svg>
+                Neue Vorlage
+            </button>
+            <button class="btn btn-primary" id="settingsBtn">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="2"/>
+                    <path d="M12 1v6m0 6v6m11-7h-6m-6 0H1" stroke="currentColor" stroke-width="2"/>
+                </svg>
+                Einstellungen
+            </button>
+        </div>
+    </div>
+
+    <!-- Modal für neue Vorlage -->
+    <div class="modal" id="addTemplateModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Neue Vorlage erstellen</h3>
+                <button class="close-btn" id="closeModal">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <line x1="18" y1="6" x2="6" y2="18" stroke="currentColor" stroke-width="2"/>
+                        <line x1="6" y1="6" x2="18" y2="18" stroke="currentColor" stroke-width="2"/>
+                    </svg>
+                </button>
+            </div>
+            <form id="templateForm">
+                <div class="form-group">
+                    <label for="templateTitle">Titel</label>
+                    <input type="text" id="templateTitle" required>
+                </div>
+                <div class="form-group">
+                    <label for="templateCategory">Kategorie</label>
+                    <select id="templateCategory" required>
+                        <option value="email">Email</option>
+                        <option value="support">Support</option>
+                        <option value="dev" class="premium-only">Development</option>
+                        <option value="ai" class="premium-only">KI Prompts</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="templateContent">Inhalt</label>
+                    <textarea id="templateContent" rows="6" required></textarea>
+                </div>
+                
+                <!-- KI-Prompt-Generator (Premium) -->
+                <div class="ai-prompt-section premium-only">
+                    <h3>KI-Prompt Generator</h3>
+                    <div class="prompt-input-container">
+                        <textarea id="promptInput" placeholder="Geben Sie hier Ihren Prompt ein..." rows="4"></textarea>
+                    </div>
+                    <div class="prompt-actions">
+                        <button id="generatePromptBtn" class="action-button">
+                            <i class="fas fa-magic"></i> Prompt generieren
+                        </button>
+                    </div>
+                    <div id="loadingIndicator" class="loading-indicator" style="display: none;">
+                        <div class="spinner"></div>
+                        <span>Generiere Prompt...</span>
+                    </div>
+                    <div id="promptResult" class="prompt-result" style="display: none;">
+                        <div class="prompt-header">
+                            <h4>Generierter Prompt</h4>
+                            <div class="prompt-actions">
+                                <button class="action-button copy-button" title="In Zwischenablage kopieren">
+                                    <i class="fas fa-copy"></i> Kopieren
+                                </button>
+                                <button class="action-button save-button" title="Prompt speichern">
+                                    <i class="fas fa-save"></i> Speichern
+                                </button>
+                            </div>
+                        </div>
+                        <div class="prompt-content"></div>
+                    </div>
+                </div>
+
+                <div class="form-actions">
+                    <button type="button" class="btn btn-secondary" id="cancelBtn">Abbrechen</button>
+                    <button type="submit" class="btn btn-primary">Speichern</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="popup.js"></script>
+</body>
+</html>
+

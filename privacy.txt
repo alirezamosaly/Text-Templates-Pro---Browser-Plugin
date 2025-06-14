@@ -1,0 +1,118 @@
+Datenschutzerklärung für Text Templates Pro
+
+0. Alleiniger Zweck der Erweiterung
+Text Templates Pro dient dem alleinigen Zweck, Benutzern eine effiziente Möglichkeit zu bieten, häufig verwendete Textvorlagen zu verwalten und mit KI-Unterstützung zu generieren. Die Erweiterung:
+- Ermöglicht das Speichern und Verwalten von Textvorlagen
+- Bietet schnellen Zugriff auf gespeicherte Vorlagen
+- Unterstützt bei der Generierung von Textvorlagen durch KI
+- Integriert sich nahtlos in den Browser-Workflow
+
+Alle Funktionen der Erweiterung dienen diesem einen Hauptzweck. Es werden keine zusätzlichen oder abweichenden Funktionen implementiert.
+
+1. Verantwortlicher
+Text Templates Pro
+[Ihre Kontaktdaten einfügen]
+
+2. Datenerfassung und -verarbeitung
+Die Erweiterung Text Templates Pro erfasst und verarbeitet folgende Daten:
+
+- Textvorlagen, die vom Benutzer erstellt werden
+- Einstellungen und Präferenzen des Benutzers
+- Temporäre Daten während der Nutzung der KI-Prompt-Generierung
+
+3. Zweck der Datenerfassung
+Die Datenerfassung dient ausschließlich:
+- Der Bereitstellung der Textvorlagen-Funktionalität
+- Der Speicherung von Benutzereinstellungen
+- Der Verbesserung der Benutzererfahrung
+
+4. Datenspeicherung
+- Alle Daten werden lokal im Browser des Benutzers gespeichert
+- Keine Daten werden an externe Server übertragen
+- Die Speicherung erfolgt über die Chrome Storage API
+
+5. Datensicherheit
+- Alle Daten werden verschlüsselt gespeichert
+- Keine Weitergabe an Dritte
+- Keine Verknüpfung mit anderen Datenquellen
+
+6. Rechte der Nutzer
+Gemäß DSGVO haben Sie folgende Rechte:
+- Recht auf Auskunft
+- Recht auf Berichtigung
+- Recht auf Löschung
+- Recht auf Einschränkung der Verarbeitung
+- Recht auf Datenübertragbarkeit
+- Widerspruchsrecht
+
+7. Cookies und Tracking
+- Die Erweiterung verwendet keine Cookies
+- Es findet kein Tracking statt
+
+8. Änderungen der Datenschutzerklärung
+Wir behalten uns vor, diese Datenschutzerklärung anzupassen. Die aktuelle Version ist immer in der Erweiterung verfügbar.
+
+9. Kontakt
+Bei Fragen zum Datenschutz kontaktieren Sie uns bitte unter:
+[Ihre Kontakt-E-Mail einfügen]
+
+10. Begründung der Berechtigungen
+
+a) storage
+Die Berechtigung "storage" wird benötigt, um:
+- Textvorlagen des Benutzers lokal zu speichern
+- Benutzereinstellungen zu speichern
+- Die Persistenz der Daten zwischen Browsersitzungen zu gewährleisten
+Diese Daten werden ausschließlich lokal im Browser des Benutzers gespeichert.
+
+b) activeTab
+Die Berechtigung "activeTab" wird benötigt, um:
+- Text in das aktive Eingabefeld einzufügen
+- Den aktuellen Kontext der Webseite zu erkennen
+- Die korrekte Position für das Einfügen von Textvorlagen zu bestimmen
+Diese Berechtigung wird nur temporär während der aktiven Nutzung der Erweiterung verwendet.
+
+c) contextMenus
+Die Berechtigung "contextMenus" wird benötigt, um:
+- Das Kontextmenü für schnellen Zugriff auf Textvorlagen zu aktivieren
+- Die Integration der Erweiterung in den Browser-Workflow zu ermöglichen
+Diese Berechtigung wird nur für die Menüstruktur verwendet.
+
+d) Host-Berechtigungen
+Die Host-Berechtigungen werden ausschließlich für folgende Zwecke verwendet:
+- https://*.google.com/*: Für die Integration mit Google-Diensten und die Authentifizierung
+- https://generativelanguage.googleapis.com/*: Für die KI-Prompt-Generierung
+Diese Berechtigungen werden nur verwendet, wenn der Benutzer aktiv die entsprechenden Funktionen nutzt.
+
+11. Remote-Code
+- Die Erweiterung verwendet keinen Remote-Code
+- Alle Funktionalitäten sind in der Erweiterung selbst implementiert
+- Es werden keine externen Skripte oder Code dynamisch nachgeladen
+- Die einzige externe Kommunikation erfolgt bei der KI-Prompt-Generierung über die Google API
+
+12. Detaillierte Auflistung der Datenerfassung
+
+Die Erweiterung erfasst KEINE der folgenden Daten:
+- Personenidentifizierbare Informationen (Name, Adresse, E-Mail, etc.)
+- Gesundheitsinformationen
+- Finanzdaten und Zahlungsinformationen
+- Authentifizierungsdaten (außer temporär für Google API)
+- Persönliche Kommunikation
+- Standortdaten
+- Webprotokolle
+- Nutzeraktivitäten (Klicks, Mausposition, etc.)
+- Website-Inhalte
+
+Erfasste Daten:
+- Textvorlagen (nur lokal gespeichert)
+- Benutzereinstellungen (nur lokal gespeichert)
+- Temporäre Daten für KI-Prompt-Generierung (werden nach Verarbeitung gelöscht)
+
+Zukünftige Datenerfassung:
+- Es sind keine Änderungen in der Datenerfassung geplant
+- Sollten zukünftige Funktionen zusätzliche Daten erfordern, wird dies:
+  a) In dieser Datenschutzerklärung aktualisiert
+  b) Vor der Implementierung angekündigt
+  c) Nur mit expliziter Einwilligung des Nutzers durchgeführt
+
+Stand: [Aktuelles Datum einfügen] 
